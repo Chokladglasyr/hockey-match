@@ -36,7 +36,7 @@ function Nils({ eng }: { eng: boolean }) {
         <p>{lang.p_three}</p>
         <p>{lang.p_four}</p>
       </article>
-      <Link className="BTN" id="nils" to={"/home"}>
+      <Link className="BTN" id="nils" to={"/"}>
         Tillbaka hem
       </Link>
     </>

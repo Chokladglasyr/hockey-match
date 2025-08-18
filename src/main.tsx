@@ -14,10 +14,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {path: "nils",
-        element: <Nils eng={false} />
+        element: <Nils eng={true} />
       },
       {path: "",
-      element: <Home eng={false}/>
+      element: <Home eng={true}/>
       }
     ]
   },
