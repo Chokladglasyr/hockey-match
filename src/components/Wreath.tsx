@@ -1,11 +1,24 @@
-function Wreath() {
+function Wreath({eng}: {eng:boolean}) {
+    const text = {
+    en: {
+      title: "You're invited!",
+      date: "September 27th",
+      location: "@ Köpings Ice Hall",
+    },
+    sv: {
+      title: "Du är bjuden!",
+      date: "27:e september",
+      location: "@ Köpings Ishall",
+    }
+  }
+  const lang = eng ? text.en : text.sv
   return (
     <>
         <section id="wreath">
-        <h1>DU ÄR BJUDEN!</h1>
+        <h1>{lang.title}</h1>
         <img className="picture" src="nils.png" alt="" />
-        <h2>September 27</h2>
-        <h3>@ Köpings ishall</h3>
+        <h2>{lang.date}</h2>
+        <h3>{lang.location}</h3>
         </section>
     </>
   );

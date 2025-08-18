@@ -29,7 +29,7 @@ function Nils({ eng }: { eng: boolean }) {
 
   return (
     <>
-      <Wreath />
+      <Wreath eng={true} />
       <article id="aboutNils">
         <p>{lang.p_one}</p>
         <p>{lang.p_two}</p>
