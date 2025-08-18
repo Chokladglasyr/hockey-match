@@ -6,6 +6,7 @@ import Admin from './Admin'
 import App from './App'
 import Nils from './components/Nils'
 import Home from './components/Home'
+import Schedule from './components/Schedule'
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,9 @@ const router = createBrowserRouter([
       },
       {path: "",
       element: <Home eng={true}/>
+      },
+      {path: "/theday",
+        element: <Schedule eng={true} />
       }
     ]
   },

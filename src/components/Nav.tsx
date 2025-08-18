@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Nav({eng}:{eng: boolean}) {
   const text = {
     en:{
@@ -14,9 +16,9 @@ function Nav({eng}:{eng: boolean}) {
   return (
     <>
       <nav>
-        <button className="BTN" id="schedule">
+        <Link to={"/theday"} className="BTN" id="schedule">
           {lang.button_one}
-        </button>
+        </Link>
         <button className="BTN" id="intresse">
           {lang.button_two}
         </button>
