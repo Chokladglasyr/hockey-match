@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       {path: "nils",
         element: <Nils />
       },
-      {path: "home",
+      {path: "",
       element: <Home eng={true}/>
       }
     ]
