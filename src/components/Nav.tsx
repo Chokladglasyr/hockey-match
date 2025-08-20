@@ -19,9 +19,9 @@ function Nav({eng}:{eng: boolean}) {
         <Link to={"/theday"} className="BTN" id="schedule">
           {lang.button_one}
         </Link>
-        <button className="BTN" id="intresse">
+        <Link to={"/signup"}className="BTN" id="intresse">
           {lang.button_two}
-        </button>
+        </Link>
       </nav>
     </>
   );

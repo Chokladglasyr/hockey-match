@@ -7,6 +7,7 @@ import App from './App'
 import Nils from './components/Nils'
 import Home from './components/Home'
 import Schedule from './components/Schedule'
+import Form from './components/Form'
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       },
       {path: "/theday",
         element: <Schedule eng={true} />
+      },
+      {
+        path: "/signup",
+        element: <Form eng={true}/>
       }
     ]
   },
