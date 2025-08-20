@@ -40,7 +40,7 @@ function Form({eng}: {eng: boolean}) {
                 <label htmlFor="allergy">{lang.allergy}</label>
                 <textarea name="allergy" id="allergy">{lang.msg1}</textarea>
                 <label htmlFor="other">{lang.other}</label>
-                <textarea name="other" id="other">{lang.msg2}</textarea>
+                <textarea name="other" id="other" value={lang.msg2}></textarea>
             </form>
             <button>{lang.btn}</button>
         </section>
