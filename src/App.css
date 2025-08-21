@@ -26,7 +26,7 @@ nav {
   font-size: 16px;
   text-decoration: none;
 }
-#intresse {
+#intresse, #signup {
   background-color: #C18903;
   color: #293241;
 }
@@ -160,7 +160,50 @@ footer {
     width: 45px;
   }
 }
-form {
+form, .text {
   display: flex;
   flex-direction: column;
+}
+form {
+  margin-top: 20px;
+  gap: 20px;
+  >input {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid black 1px;
+  }
+  >div>input {
+    margin-right: 8px;
+  }
+  >.text{
+    gap: 5px;
+  }
+  >div>textarea {
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.card {
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  >div>p {
+    margin-top: 5px;
+      font-family: "Baloo Bhaijaan 2", sans-serif;
+  }
+}
+.signup {
+  gap: 10px;
+  >p{
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  }
 }

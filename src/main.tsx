@@ -10,6 +10,7 @@ import Schedule from './components/Schedule'
 import Form from './components/Form'
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,14 +19,14 @@ const router = createBrowserRouter([
       {path: "nils",
         element: <Nils eng={true} />
       },
-      {path: "",
+      {path: "/",
       element: <Home eng={true}/>
       },
-      {path: "/theday",
+      {path: "theday",
         element: <Schedule eng={true} />
       },
       {
-        path: "/signup",
+        path: "signup",
         element: <Form eng={true}/>
       }
     ]
