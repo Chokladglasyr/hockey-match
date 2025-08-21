@@ -67,7 +67,6 @@ function Admin() {
       }
     }
   }
-  if (loading) return <p>Loading attendees...</p>;
   if(!auth) {
     return (
       <>
@@ -81,8 +80,9 @@ function Admin() {
     )
   } else{
     return (
-    <>
+      <>
       <h1>Admin</h1>
+      if (loading) return <p>Loading...</p>;
       <article className="admin">
         {attendees.map((attendee) => (
           <div className="card" key={attendee._id}>
