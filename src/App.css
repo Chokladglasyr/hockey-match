@@ -3,7 +3,7 @@
   margin: 0;
 }
 nav, main {
-    max-width: 600px;
+  max-width: 600px;
   margin: 0 auto;
 }
 body {
@@ -12,6 +12,15 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+}
+#language{
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  >img{
+    width: 42px;
+  }
 }
 .BTN {
   /* margin: 40px 90px; */

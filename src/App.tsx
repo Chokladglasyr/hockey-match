@@ -14,9 +14,10 @@ function App() {
   return (
     <>
       <Nav />
+        <button id="language" onClick={toggleLanguage}>{eng ? <img src="sv.svg" alt="" /> : <img src="en.svg" alt="" />}</button>
       <main>
-        <button onClick={toggleLanguage}>{eng ? "Swedish": "English"}</button>
         <Outlet/>
+        
       </main>
       <Footer />
     </>
