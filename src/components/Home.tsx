@@ -14,11 +14,12 @@ function Home() {
       activity_three: "Free autographs",
       activity_four: "Meet the players!",
       button: "Read about Nils",
-      descript1:
-        "Den 27 september – på Nils-Erik Söderlunds födelsedag – samlas vi för att hedra hans minne genom det han älskade mest: hockey. ",
-      descript2: 
-      "Med värme, glädje och gemenskap minns vi Nisse – samtidigt som vi lyfter frågan om hjärnskador inom sporten.",
-      descript3: "Tack för att du är här och gör den här dagen möjlig."
+            descript1: 
+      "On September 27 — Nils-Erik Söderlund’s birthday — we gather to honor his memory through the sport he loved: hockey.",
+      descript2:
+      "This is a day of joy, remembrance, and awareness — with a fundraiser to support brain injury research, an issue close to Nils-Erik’s story.",
+      descript3: 
+      "Thank you for being here and helping make this day truly special."
     },
     sv: {
       activity_one: "Testa skjut mot mål!",
@@ -26,12 +27,11 @@ function Home() {
       activity_three: "Gratis autografer",
       activity_four: "Träffa spelarna!",
       button: "Läs om honom här",
-      descript1: 
-      "On September 27 — Nils-Erik Söderlund’s birthday — we gather to honor his memory through the sport he loved: hockey.",
-      descript2:
-      "This is a day of joy, remembrance, and awareness — with a fundraiser to support brain injury research, an issue close to Nils-Erik’s story.",
-      descript3: 
-      "Thank you for being here and helping make this day truly special."
+      descript1:
+        "Den 27 september – på Nils-Erik Söderlunds födelsedag – samlas vi för att hedra hans minne genom det han älskade mest: hockey. ",
+      descript2: 
+      "Med värme, glädje och gemenskap minns vi Nisse – samtidigt som vi lyfter frågan om hjärnskador inom sporten.",
+      descript3: "Tack för att du är här och gör den här dagen möjlig."
     },
   };
   const lang = eng ? text.en : text.sv;
