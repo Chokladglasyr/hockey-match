@@ -19,9 +19,10 @@ function Admin() {
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({name:"", email:""})
   const API_URL = import.meta.env.VITE_API_BASE_URL_LOCAL;
+  const [filter, setFilter] = useState("all")
   
   useEffect(() => {
-    // console.log(API_URL)
+ 
     const fetchAttendee = async () => {
       try {
         const res = await fetch(`${API_URL}/admin/`);
@@ -38,6 +39,12 @@ function Admin() {
     };
     fetchAttendee();
   }, []);
+
+  const filteredAttendees = attendees.filter((attendees) => {
+    if(filter === "all") return true;
+    if(filter === "staying") return attendees.staying;
+    if(filter === "banquet") return attendees.banquet
+  })
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target
@@ -70,21 +77,32 @@ function Admin() {
   if(!auth) {
     return (
       <>
+      <main>
       <form onSubmit={loginAdmin}>
         <input type="text" name="name" id="name" placeholder="Name" onChange={handleInput} required/>
         <input type="password" name="password" id="password" placeholder="Password" onChange={handleInput} required/>
-        <button>Login</button>
+        <button className="BTN" id="login">LOGIN</button>
       </form>
       <p>{message}</p>
+
+      </main>
       </>
     )
   } else{
     return (
       <>
+      <main id="admin">
       <h1>Admin</h1>
       {loading ? <p>Loading...</p> : <p></p>}
+      <label htmlFor="sort">Filter by:</label>
+      <select name="sort" id="sort" value={filter} onChange={e => setFilter(e.target.value)}>
+        <option value="all">All</option>
+        <option value="banquet">Attending banquet</option>
+        <option value="staying">Wants to stay</option>
+      </select>
       <article className="admin">
-        {attendees.map((attendee) => (
+        <h3>Total: {filteredAttendees.length}</h3>
+        {filteredAttendees.map((attendee) => (
           <div className="card" key={attendee._id}>
             <div>
             <p><strong>Name:</strong> {attendee.name}</p>
@@ -100,6 +118,8 @@ function Admin() {
           </div>
         ))}
       </article>
+
+      </main>
     </>
   );
   }
