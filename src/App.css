@@ -6,6 +6,9 @@ nav, main {
   max-width: 600px;
   margin: 0 auto;
 }
+main{
+  margin-bottom: 150px;
+}
 body {
   background-color: #E4F5FF;
 }
@@ -215,4 +218,10 @@ form {
   max-width: 500px;
   text-align: center;
   }
+}
+
+@media (min-width: 500px) {
+#language{
+  right: 35%;
+}
 }
