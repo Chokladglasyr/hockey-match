@@ -13,7 +13,7 @@ function Wreath() {
       location: "@ Köpings Ice Hall",
     },
     sv: {
-      title: "Du är bjuden!",
+      title: "Du är inbjuden!",
       date: "27:e september",
       location: "@ Köpings Ishall",
     },
