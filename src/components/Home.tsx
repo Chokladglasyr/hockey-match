@@ -15,7 +15,7 @@ function Home() {
       activity_four: "Meet the players!",
       button: "Read about Nils",
             descript1: 
-      "On September 27 — Nils-Erik Söderlund’s birthday — we gather to honor his memory through the sport he loved: hockey.",
+      "On September 27 — Nils-Erik Söderlund’s birthday — we gather to honor his memory through the sport he loved, ice hockey.",
       descript2:
       "This is a day of joy, remembrance, and awareness — with a fundraiser to support brain injury research, an issue close to Nils-Erik’s story.",
       descript3: 
@@ -28,7 +28,7 @@ function Home() {
       activity_four: "Träffa spelarna!",
       button: "Läs om honom här",
       descript1:
-        "Den 27 september – på Nils-Erik Söderlunds födelsedag – samlas vi för att hedra hans minne genom det han älskade mest: hockey. ",
+        "Den 27 september – på Nils-Erik Söderlunds födelsedag – samlas vi för att hedra hans minne genom det han älskade mest, ishockey. ",
       descript2: 
       "Med värme, glädje och gemenskap minns vi Nisse – samtidigt som vi lyfter frågan om hjärnskador inom sporten.",
       descript3: "Tack för att du är här och gör den här dagen möjlig."
