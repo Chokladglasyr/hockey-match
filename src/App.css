@@ -234,6 +234,24 @@ form {
 #login {
   background-color: #5A980F;
 }
+#theday{
+  >h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  >div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+
+  }
+}
+table{
+  >tr>.time{
+    width: 150px;
+  }
+}
 
 @media (min-width: 500px) {
   .card {

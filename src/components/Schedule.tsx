@@ -10,13 +10,15 @@ function Schedule() {
     const text = {
         en: {
             title: "Schedule",
-            first: "1:00 PM – 3:00 PM – Tribute match between former teammates from Köping and former teammates from the USA",
+            timeOne: "1:00 PM – 3:00 PM ",
+            first: "Match time!",
             second: "",
             third: "",
         },
         sv: {
             title: "Schema",
-            first: "13.00 - 15.00 - Hyllningsmatch mellan forna lagkramater från Köping mot forna lagkamrater i USA",
+            timeOne: "13.00 - 15.00 ",
+            first: "Matchdags!",
             second: "",
             third: "",
         }
@@ -26,12 +28,21 @@ function Schedule() {
     return (
         <>
         <Logo />
-        <article>
+        <article id="theday">
             <h1>{lang.title}</h1>
+            {/* <div>
+                <p>{lang.timeOne}</p>
             <p>{lang.first}</p>
+            </div>
             <p>{lang.second}</p>
-            <p>{lang.third}</p>
+            <p>{lang.third}</p> */}
         </article>
+        <table>
+            <tr>
+                <td className="time">{lang.timeOne}</td>
+                <td>{lang.first}</td>
+            </tr>
+        </table>
         </>
     )
 }

@@ -93,7 +93,6 @@ function Admin() {
       <>
       <main id="admin">
       <h1>Admin</h1>
-      {loading ? <p>Loading...</p> : <p></p>}
       <label htmlFor="sort">Filter by:</label>
       <select name="sort" id="sort" value={filter} onChange={e => setFilter(e.target.value)}>
         <option value="all">All</option>
@@ -102,6 +101,7 @@ function Admin() {
       </select>
       <article className="admin">
         <h3>Total: {filteredAttendees.length}</h3>
+      {loading ? <p>Loading...</p> : <p></p>}
         {filteredAttendees.map((attendee) => (
           <div className="card" key={attendee._id}>
             <div>
