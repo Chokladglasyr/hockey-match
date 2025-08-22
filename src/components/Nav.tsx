@@ -26,9 +26,14 @@ function Nav() {
   return (
     <>
       <nav>
-        <Link to={"/theday"} className="BTN" id="schedule">
-          {lang.button_one}
-        </Link>
+        {pathname != "/theday" ? (
+          <Link to={"/theday"} className="BTN" id="schedule">
+            {lang.button_one}
+          </Link>
+        ) : (
+          <BackHomeBtn />
+        )}
+
         {pathname != "/signup" ? (
           <Link to={"/signup"} className="BTN" id="intresse">
             {lang.button_two}

@@ -33,7 +33,6 @@ function Schedule() {
             <p>{lang.second}</p>
             <p>{lang.third}</p>
         </article>
-              <BackHomeBtn />
         </>
     )
 }
