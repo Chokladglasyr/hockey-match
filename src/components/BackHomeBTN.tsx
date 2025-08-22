@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../store/languageContext";
 
-function BackHomeBtn({eng}:{eng:boolean}){
+function BackHomeBtn(){
+      const language = useContext(LanguageContext)
+  if(!language) throw new Error ("Must be used within LanguageProvider");
+  const {eng} = language
     const text = {
         en:{
             button: "Back home"

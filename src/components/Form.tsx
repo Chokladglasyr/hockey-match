@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LanguageContext } from "../store/languageContext";
 
-function Form({ eng }: { eng: boolean }) {
-    const navigate = useNavigate();
+function Form() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng } = language;
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const API_URL = import.meta.env.VITE_API_BASE_URL_LOCAL;
 
@@ -16,8 +20,8 @@ function Form({ eng }: { eng: boolean }) {
       });
       const data = await res.json();
       console.log(data);
-      alert("Thank you for signing up!")
-      navigate("/")
+      alert("Thank you for signing up!");
+      navigate("/");
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.error("Failed to sign up: ", err);
@@ -25,13 +29,14 @@ function Form({ eng }: { eng: boolean }) {
     }
   };
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target;
-    if(type === "checkbox" && e.target instanceof HTMLInputElement){
-        setFormData({...formData, [name]: e.target.checked})
-    }else {
-
-        setFormData({ ...formData, [name]: value });
+    if (type === "checkbox" && e.target instanceof HTMLInputElement) {
+      setFormData({ ...formData, [name]: e.target.checked });
+    } else {
+      setFormData({ ...formData, [name]: value });
     }
   };
   const text = {
@@ -41,9 +46,9 @@ function Form({ eng }: { eng: boolean }) {
       banquet: "I will attend the banquet.",
       allergy: "Do you have any allergies/intolerances?",
       other: "Other",
-      btn: "Skicka in",
+      btn: "Send",
       thanks:
-        "Tack för att du anmäler dig, då kan vi lättare räkna på hur mycket mat som behövs och hjälpa hotellet få plats med alla!",
+      "Thank you for registering, it makes it easier for us to calculate how much food is needed and help the hotel accommodate everyone!",
     },
     sv: {
       name: "Namn",
@@ -51,9 +56,9 @@ function Form({ eng }: { eng: boolean }) {
       banquet: "Jag kommer delta på banketten.",
       allergy: "Har du några allergier/intoleranser?",
       other: "Övrigt",
-      btn: "Send",
+      btn: "Skicka in",
       thanks:
-        "Thank you for registering, it makes it easier for us to calculate how much food is needed and help the hotel accommodate everyone!",
+        "Tack för att du anmäler dig, då kan vi lättare räkna på hur mycket mat som behövs och hjälpa hotellet få plats med alla!",
     },
   };
   const lang = eng ? text.en : text.sv;
@@ -80,7 +85,12 @@ function Form({ eng }: { eng: boolean }) {
             onChange={handleInput}
           />
           <div>
-            <input type="checkbox" name="staying" id="staying" onChange={handleInput}/>
+            <input
+              type="checkbox"
+              name="staying"
+              id="staying"
+              onChange={handleInput}
+            />
             <label htmlFor="hotel">{lang.hotel}</label>
           </div>
           <div>
@@ -94,7 +104,11 @@ function Form({ eng }: { eng: boolean }) {
           </div>
           <div className="text">
             <label htmlFor="allergy">{lang.allergy}</label>
-            <textarea name="allergy" id="allergy" onChange={handleInput}></textarea>
+            <textarea
+              name="allergy"
+              id="allergy"
+              onChange={handleInput}
+            ></textarea>
           </div>
           <div className="text">
             <label htmlFor="other">{lang.other}</label>

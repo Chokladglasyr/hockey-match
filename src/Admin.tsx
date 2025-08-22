@@ -52,7 +52,7 @@ function Admin() {
         body: JSON.stringify({...formData})
       })
       const data = await res.json()
-      console.log(data.message)
+      // console.log(data.message)
       if(data.message){
         setMessage(data.message)
       }
@@ -82,7 +82,7 @@ function Admin() {
     return (
       <>
       <h1>Admin</h1>
-      if (loading) return <p>Loading...</p>;
+      {loading ? <p>Loading...</p> : <p></p>}
       <article className="admin">
         {attendees.map((attendee) => (
           <div className="card" key={attendee._id}>

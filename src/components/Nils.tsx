@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import BackHomeBtn from "./BackHomeBTN";
 import Wreath from "./Wreath";
+import { LanguageContext } from "../store/languageContext";
 
-function Nils({ eng }: { eng: boolean }) {
+function Nils() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng } = language;
+
   const text = {
     en: {
       p_one:
@@ -12,7 +18,6 @@ function Nils({ eng }: { eng: boolean }) {
         "Sports were a major part of his life, and above all, ice hockey held a special place in his heart. Ahead of the 2016/2017 season, “Nisse” returned to his childhood club, Köping Hockey. The large forward didn’t make much of a mark in the scoring charts, but his tough playing style made him a fan favorite.",
       p_four:
         "To remember and honor his life, preparations are currently underway for a tribute match to be played at Köpings Ice Arena on Saturday, September 27. On that day, several of his former teammates from Köping Hockey will face off against a mix of his past teammates from various parts of the USA.",
-        
     },
     sv: {
       p_one:
@@ -23,7 +28,6 @@ function Nils({ eng }: { eng: boolean }) {
         "Sport var en stor del av hans liv och framförallt var det ishockey hans hjärta klappade extra för. Inför säsongen 2016/2017 återvände ”Nisse” till moderklubben Köping Hockey. Den storväxte forwarden gjorde inga större avtryck i poängligan, men hans tuffa spelstil gjorde honom till en favorit bland publiken.",
       p_four:
         "För att minnas och hylla hans liv pågår just nu förberedelser inför en hyllningsmatch som ska spelas i Köpings ishall lördagen den 27 september. Då kommer flera av hans gamla lagkamrater i Köping Hockey att möta ett hopplock av hans tidigare lagkamrater från olika delar av USA.",
-      
     },
   };
 
@@ -31,14 +35,14 @@ function Nils({ eng }: { eng: boolean }) {
 
   return (
     <>
-      <Wreath eng={true} />
+      <Wreath />
       <article id="aboutNils">
         <p>{lang.p_one}</p>
         <p>{lang.p_two}</p>
         <p>{lang.p_three}</p>
         <p>{lang.p_four}</p>
       </article>
-      <BackHomeBtn eng ={true} />
+      <BackHomeBtn />
     </>
   );
 }

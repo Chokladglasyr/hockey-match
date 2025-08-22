@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import BackHomeBtn from "./BackHomeBTN";
 import Logo from "./Logo"
+import { LanguageContext } from "../store/languageContext";
 
-function Schedule({eng}:{eng:boolean}) {
+function Schedule() {
+      const language = useContext(LanguageContext)
+  if(!language) throw new Error ("Must be used within LanguageProvider");
+  const {eng} = language
 
     const text = {
         en: {
@@ -21,14 +26,14 @@ function Schedule({eng}:{eng:boolean}) {
 
     return (
         <>
-        <Logo eng={true} />
+        <Logo />
         <article>
             <h1>{lang.title}</h1>
             <p>{lang.first}</p>
             <p>{lang.second}</p>
             <p>{lang.third}</p>
         </article>
-              <BackHomeBtn eng ={true} />
+              <BackHomeBtn />
         </>
     )
 }

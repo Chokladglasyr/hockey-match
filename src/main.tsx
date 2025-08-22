@@ -8,6 +8,8 @@ import Nils from './components/Nils'
 import Home from './components/Home'
 import Schedule from './components/Schedule'
 import Form from './components/Form'
+import { LanguageProvider } from './store/languageContext'
+
 
 
 
@@ -17,29 +19,31 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {path: "nils",
-        element: <Nils eng={true} />
+        element: <Nils />
       },
       {path: "/",
-      element: <Home eng={true}/>
+      element: <Home />
       },
       {path: "theday",
-        element: <Schedule eng={true} />
+        element: <Schedule />
       },
       {
         path: "signup",
-        element: <Form eng={true}/>
+        element: <Form />
       }
     ]
   },
   {
     path: "/admin",
-    errorElement: <div>Not found</div>,
     element: <Admin />
   },
 ])
 
 createRoot(document.getElementById('root')as HTMLElement).render(
   <StrictMode>
+    <LanguageProvider>
+
     <RouterProvider router = {router} />
+    </LanguageProvider>
   </StrictMode>,
 )

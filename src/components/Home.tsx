@@ -1,30 +1,33 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import { useContext } from "react";
+import { LanguageContext } from "../store/languageContext";
 
-
-
-function Home({eng}: {eng: boolean}) {
-const text = {
+function Home() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng } = language;
+  const text = {
     en: {
-        activity_one: "Take a shot at the goal!",
-        activity_two: "Win prizes!",
-        activity_three: "Free autographs",
-        activity_four: "Meet the players!",
-        button: "Read about Nils"
+      activity_one: "Take a shot at the goal!",
+      activity_two: "Win prizes!",
+      activity_three: "Free autographs",
+      activity_four: "Meet the players!",
+      button: "Read about Nils",
     },
     sv: {
-        activity_one: "Testa skjut mot mål!",
-        activity_two: "Vinn priser!",
-        activity_three: "Gratis autografer",
-        activity_four: "Träffa spelarna!",
-        button: "Läs om honom här"
-    }
-}
-const lang = eng ? text.en : text.sv
+      activity_one: "Testa skjut mot mål!",
+      activity_two: "Vinn priser!",
+      activity_three: "Gratis autografer",
+      activity_four: "Träffa spelarna!",
+      button: "Läs om honom här",
+    },
+  };
+  const lang = eng ? text.en : text.sv;
 
   return (
     <>
-      <Logo eng={true}/>
+      <Logo />
       <article className="activities">
         <div>
           <img className="emoji" src="goal.png" alt="goal" />

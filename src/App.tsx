@@ -3,15 +3,22 @@ import "./App.css";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { useContext } from "react";
+import { LanguageContext } from "./store/languageContext";
 
 function App() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng, toggleLanguage } = language;
+
   return (
     <>
-      <Nav eng={true} />
+      <Nav />
       <main>
+        <button onClick={toggleLanguage}>{eng ? "Swedish": "English"}</button>
         <Outlet/>
       </main>
-      <Footer eng={true} />
+      <Footer />
     </>
   );
 }

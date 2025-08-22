@@ -1,4 +1,10 @@
-function Logo({eng}: {eng: boolean}) {
+import { useContext } from "react";
+import { LanguageContext } from "../store/languageContext";
+
+function Logo() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng } = language;
 
   const text = {
     en: {

@@ -1,14 +1,21 @@
-function Footer({eng}: {eng: boolean}) {
-    const text = {
-        en: {
-            title: "Sponsors"
-        },
-        sv: {
-            title: "Sponsorer"
-        }
-    }
+import { useContext } from "react";
+import { LanguageContext } from "../store/languageContext";
 
-    const lang = eng ? text.en : text.sv;
+function Footer() {
+  const language = useContext(LanguageContext);
+  if (!language) throw new Error("Must be used within LanguageProvider");
+  const { eng } = language;
+
+  const text = {
+    en: {
+      title: "Sponsors",
+    },
+    sv: {
+      title: "Sponsorer",
+    },
+  };
+
+  const lang = eng ? text.en : text.sv;
   return (
     <>
       <footer>
